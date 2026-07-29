@@ -3,47 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spider-Man | Marvel</title>
+    <title>The Ultimate Peter Parker Debate</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Social Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Background watermark text -->
-        <div class="watermark">MARVEL</div>
 
-        <!-- Left Content Section -->
-        <main class="content-section">
-            <div class="logo">
-                <span class="marvel-text">MARVEL</span>
-            </div>
+    <header>
+        <h1>Who is the Best Peter Parker?</h1>
+        <p>Cast your vote and join the debate below!</p>
+    </header>
 
-            <div class="bio">
-                <h1 class="hero-title">SPIDER-MAN</h1>
-                <p class="hero-desc">
-                    He is a crime-fighting hero in the Marvel universe. Peter Parker gained his powers by being bitten by a radioactive spider and follows the motto "With great power comes great responsibility."
-                </p>
-            </div>
-
-            <footer class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </footer>
-        </main>
-
-        <!-- Center Image Section -->
-        <div class="hero-image-wrapper">
-            <!-- Cutout background angle -->
-            <div class="hero-bg-slant"></div>
-            <!-- Main Character Image -->
-            <img src="https://wallpapers.com/images/hd/spider-man-ps4-action-pose-83e9b0y3g213f56e.png" alt="Spider-Man" class="hero-image">
+    <main class="debate-container">
+        <!-- Tobey Card -->
+        <div class="card">
+            <h2>Tobey Maguire</h2>
+            <p class="era">Raimi Trilogy (2002–2007)</p>
+            <p class="desc">The classic, nerdy, high-stakes emotional Peter Parker.</p>
+            <button onclick="addVote('Tobey')">Vote for Tobey</button>
+            <span id="votes-Tobey" class="vote-count">0 votes</span>
         </div>
 
-        <!-- Right Red Accent Polygon -->
-        <div class="red-accent"></div>
-    </div>
+        <!-- Andrew Card -->
+        <div class="card">
+            <h2>Andrew Garfield</h2>
+            <p class="era">Webb Duology (2012–2014)</p>
+            <p class="desc">Witty, high-energy, with incredible comic chemistry.</p>
+            <button onclick="addVote('Andrew')">Vote for Andrew</button>
+            <span id="votes-Andrew" class="vote-count">0 votes</span>
+        </div>
+
+        <!-- Tom Card -->
+        <div class="card">
+            <h2>Tom Holland</h2>
+            <p class="era">MCU Series (2016–Present)</p>
+            <p class="desc">Youthful, eager Avenger with massive character growth.</p>
+            <button onclick="addVote('Tom')">Vote for Tom</button>
+            <span id="votes-Tom" class="vote-count">0 votes</span>
+        </div>
+    </main>
+
+    <section class="comments-section">
+        <h2>Debate Floor</h2>
+        
+        <form id="commentForm">
+            <input type="text" id="username" placeholder="Your Name" required>
+            <select id="favorite">
+                <option value="Tobey Maguire">Team Tobey</option>
+                <option value="Andrew Garfield">Team Andrew</option>
+                <option value="Tom Holland">Team Tom</option>
+            </select>
+            <textarea id="userComment" placeholder="Why is your pick superior?" required></textarea>
+            <button type="submit">Post Argument</button>
+        </form>
+
+        <div id="commentsContainer">
+            <!-- Comments will appear here dynamically -->
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>

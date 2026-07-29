@@ -1,172 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
 body {
-    background-color: #f4f4f4;
-    overflow-x: hidden;
-    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
 }
 
-.container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #e50914;
+    font-size: 2.5rem;
+}
+
+.debate-container {
     display: flex;
-    background-color: #ffffff;
-    overflow: hidden;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
 }
 
-/* Background Watermark */
-.watermark {
-    position: absolute;
-    top: 15%;
-    left: 2%;
-    font-size: 20vw;
-    font-weight: 900;
-    color: rgba(0, 0, 0, 0.03);
-    user-select: none;
-    z-index: 1;
-    letter-spacing: -2px;
+.card {
+    background-color: #1e1e1e;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
 }
 
-/* Left Content Section */
-.content-section {
-    position: relative;
-    z-index: 10;
-    width: 35%;
-    height: 100%;
-    padding: 3rem 4rem;
+.card:hover {
+    border-color: #e50914;
+}
+
+.era {
+    color: #888;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #b20710;
+}
+
+.vote-count {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #00d26a;
+}
+
+.comments-section {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.marvel-text {
-    background-color: #e62429;
-    color: #ffffff;
-    font-weight: 900;
-    font-size: 2rem;
-    padding: 0.1rem 0.6rem;
-    letter-spacing: -1px;
-    display: inline-block;
+input, select, textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #2b2b2b;
+    color: white;
 }
 
-.bio {
-    margin-bottom: 4rem;
+.comment-box {
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
 }
 
-.hero-title {
-    font-size: 2.8rem;
-    font-weight: 900;
-    color: #e62429;
-    letter-spacing: 0.5px;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-}
-
-.hero-desc {
-    color: #4a4a4a;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    max-width: 380px;
-}
-
-/* Social Links */
-.social-links {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.social-links a {
-    color: #111111;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #e62429;
-}
-
-/* Center Image and Slanted Layer */
-.hero-image-wrapper {
-    position: absolute;
-    top: 0;
-    left: 30%;
-    width: 45%;
-    height: 100%;
-    z-index: 5;
-}
-
-.hero-bg-slant {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111111;
-    clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
-    z-index: 1;
-}
-
-.hero-image {
-    position: absolute;
-    height: 115%;
-    top: -5%;
-    left: -20%;
-    object-fit: contain;
-    z-index: 2;
-    filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.4));
-}
-
-/* Right Red Section */
-.red-accent {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40%;
-    height: 100%;
-    background-color: #e62429;
-    clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
-    z-index: 4;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 900px) {
-    .container {
-        flex-direction: column;
-        height: auto;
-        overflow-y: auto;
-    }
-
-    .content-section {
-        width: 100%;
-        height: auto;
-        padding: 2rem;
-    }
-
-    .hero-image-wrapper {
-        position: relative;
-        left: 0;
-        width: 100%;
-        height: 400px;
-    }
-
-    .red-accent {
-        display: none;
-    }
-
-    .hero-bg-slant {
-        clip-path: none;
-    }
-
-    .hero-image {
-        left: 50%;
-        transform: translateX(-50%);
-        height: 100%;
-        top: 0;
-    }
+.comment-box strong {
+    color: #e50914;
 }
